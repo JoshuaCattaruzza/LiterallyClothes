@@ -1,8 +1,8 @@
 let carouselImgsSrc = [
-    {src: 'img/Logo.png'}, /* Sempre in posizione 0 */
     {src: 'img/mens-premium-heavyweight-tee-white-left-front.png'},
-    {src: 'img/mens-premium-heavyweight-tee-white-right-front.png'},
     {src: 'img/Logo.png'}, /* Sempre in posizione 0 */
+    {src: 'img/mens-premium-heavyweight-tee-white-right-front.png'},
+    {src: 'img/Logo.png'},
     {src: 'img/mens-premium-heavyweight-tee-white-left-front.png'},
     {src: 'img/mens-premium-heavyweight-tee-white-right-front.png'}
 ]
@@ -18,12 +18,13 @@ carouselImgsSrc.forEach(el => {
 
     imgCont.appendChild(img)
     document.getElementById('slideshow-translate').appendChild(imgCont)
-
-    // Creazione puntini
+})
+// Creazione puntini
+for(let i=0; i < carouselImgsSrc.length - 2; i++){
     let dot = document.createElement('div')
     dot.classList.add('dot')
     document.getElementById('dots').appendChild(dot)
-})
+}
 
 let prevImg = document.getElementById('prev-img')
 let selectedImg = document.getElementById('selected-img')
@@ -93,18 +94,21 @@ const next = () => {
 const slideshowTranslate = document.getElementById('slideshow-translate')
 let nextBtn = document.getElementById('next')
 let prevBtn = document.getElementById('prev')
-let imgWidth = slideshowTranslate.offsetWidth / carouselImgsSrc.length
+// let imgWidth = slideshowTranslate.offsetWidth / carouselImgsSrc.length
+let imgWidth = document.getElementsByClassName('slideshow-img-cont')[0].offsetWidth
+let imgMargin = 2 * document.getElementsByClassName('slideshow-img-cont')[0].offsetLeft
+console.log("file: index.js - line 99 - document.getElementsByClassName('slideshow-img-cont')[0]", document.getElementsByClassName('slideshow-img-cont')[0].offsetLeft)
 let nextClicked = 0
 
 let selectedDotIndex = 1
 document.querySelector(`.dot:nth-child(${selectedDotIndex})`).classList.add('dot-selected')
 
 const overflowNext = () => {
-    if(nextClicked < carouselImgsSrc.length){
+    if(nextClicked < carouselImgsSrc.length - 3){
         nextClicked++
-        slideshowTranslate.style.transform = `translateX(-${imgWidth*nextClicked}px)`
+        slideshowTranslate.style.transform = `translateX(-${imgWidth*nextClicked + imgMargin}px)`
         // verifica dello stato dopo il click
-        if(nextClicked === carouselImgsSrc.length){
+        if(nextClicked === carouselImgsSrc.length-3){
             nextBtn.classList.add('hidden')
             nextBtn.classList.remove('visible')
         }
@@ -127,9 +131,9 @@ const overflowNext = () => {
 }
 
 const overflowPrev = () => {
-    if(nextClicked > 0){
+    if(nextClicked >= 0){
         nextClicked--
-        slideshowTranslate.style.transform = `translateX(-${imgWidth*nextClicked}px)`
+        slideshowTranslate.style.transform = `translateX(-${imgWidth*nextClicked + imgMargin}px)`
         // verifica dello stato dopo il click
         if(nextClicked === 0){
             prevBtn.classList.add('hidden')

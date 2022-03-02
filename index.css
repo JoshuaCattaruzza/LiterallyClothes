@@ -6,7 +6,7 @@ body {
   width: 100%;
   overflow-y: hidden;
 }
-/* HELPERS */
+/* ----- HELPERS ----- */
 .left-shadow {
   box-shadow: 2px 4px 4px rgba(55, 63, 65, 0.25);
 }
@@ -39,18 +39,18 @@ body {
   content: '\e5cb';
 }
 .hidden{
-  visibility: hidden;
+  display: none;
 }
 .visible{
-  visibility: visible;
+  display: block;
 }
-/* STYLE */
+/* ----- STYLE ----- */
 .container {
-  width: 100%;
+  /* width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: stretch; */
 }
 .container > * {
   flex-basis: 100%;
@@ -69,9 +69,10 @@ body {
 
   display: flex;
   flex-flow: column;
-  justify-content: center;
+  /* justify-content: center; */
 
   padding-left: 150px;
+  padding-top: 50px;
 
   font-size: 1.5;
   font-weight: 100;
@@ -82,6 +83,9 @@ body {
 }
 
 /* ! SLIDESHOW */
+.second-section{
+  /* height: 55vh; */
+}
 /* .slideshow {
   display: flex;
   justify-content: space-around;
@@ -94,11 +98,13 @@ body {
   /* display: flex; */
   /* justify-content: space-around;
   align-items: center; */
-  overflow: auto;
+  height: 40vh;
+  width: 100%;
+  overflow: hidden;
   white-space: nowrap;
-  position: relative;
+  position: absolute;
   z-index: 3;
-  top: -70px;
+  top: 250px;
 }
 .slideBtn{
   width: 50px;
@@ -124,6 +130,7 @@ body {
 .slideshow-img-cont{
   width: 30%;
   display: inline-block;
+  text-align: center;
   margin: 0 1%;
 }
 /* .slideshow-img-cont:first-child{
@@ -133,6 +140,7 @@ body {
   /* box-shadow: 2px 4px 4px rgba(55, 63, 65, 0.25); */
   border-radius: 30px;
   width: 100%;
+  max-width: 300px;
 }
 #dots{
   width: 100%;
@@ -161,6 +169,7 @@ body {
   align-items: center;
 }
 .slogan-container {
+  height: 35vh;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
@@ -169,7 +178,9 @@ body {
 
 /* ! FOOTER */
 .footer {
-  height: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: #61606a;
   display: flex;
   justify-content: center;
