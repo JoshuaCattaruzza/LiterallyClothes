@@ -20,10 +20,18 @@ carouselImgsSrc.forEach(el => {
     document.getElementById('slideshow-translate').appendChild(imgCont)
 })
 // Creazione puntini
-for(let i=0; i < carouselImgsSrc.length - 2; i++){
-    let dot = document.createElement('div')
-    dot.classList.add('dot')
-    document.getElementById('dots').appendChild(dot)
+if(screen.width > 600){
+    for(let i=0; i < carouselImgsSrc.length - 2; i++){
+        let dot = document.createElement('div')
+        dot.classList.add('dot')
+        document.getElementById('dots').appendChild(dot)
+    }
+} else {
+    for(let i=0; i < carouselImgsSrc.length; i++){
+        let dot = document.createElement('div')
+        dot.classList.add('dot')
+        document.getElementById('dots').appendChild(dot)
+    }
 }
 
 let prevImg = document.getElementById('prev-img')
@@ -104,17 +112,32 @@ let selectedDotIndex = 1
 document.querySelector(`.dot:nth-child(${selectedDotIndex})`).classList.add('dot-selected')
 
 const overflowNext = () => {
-    if(nextClicked < carouselImgsSrc.length - 3){
-        nextClicked++
-        slideshowTranslate.style.transform = `translateX(-${imgWidth*nextClicked + imgMargin}px)`
-        // verifica dello stato dopo il click
-        if(nextClicked === carouselImgsSrc.length-3){
+    if(screen.width > 600){
+        if(nextClicked < carouselImgsSrc.length - 3){
+            nextClicked++
+            slideshowTranslate.style.transform = `translateX(-${imgWidth*nextClicked + imgMargin}px)`
+            // verifica dello stato dopo il click
+            if(nextClicked === carouselImgsSrc.length-3){
+                nextBtn.classList.add('hidden')
+                nextBtn.classList.remove('visible')
+            }
+        } else {
             nextBtn.classList.add('hidden')
             nextBtn.classList.remove('visible')
         }
     } else {
-        nextBtn.classList.add('hidden')
-        nextBtn.classList.remove('visible')
+        if(nextClicked < carouselImgsSrc.length-1){
+            nextClicked++
+            slideshowTranslate.style.transform = `translateX(-${imgWidth*nextClicked + imgMargin}px)`
+            // verifica dello stato dopo il click
+            if(nextClicked === carouselImgsSrc.length-1){
+                nextBtn.classList.add('hidden')
+                nextBtn.classList.remove('visible')
+            }
+        } else {
+            nextBtn.classList.add('hidden')
+            nextBtn.classList.remove('visible')
+        }
     }
     // Abilitazione del tasto opposto (disabilitato)
     if(nextClicked < carouselImgsSrc.length){

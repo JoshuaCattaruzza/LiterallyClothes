@@ -6,6 +6,11 @@ body {
   width: 100%;
   overflow-y: hidden;
 }
+/* ----- Tags ----- */
+button:hover{
+  cursor: pointer;
+}
+
 /* ----- HELPERS ----- */
 .left-shadow {
   box-shadow: 2px 4px 4px rgba(55, 63, 65, 0.25);
@@ -19,7 +24,6 @@ body {
 #next{
   position: absolute;
   right: 0;
-  top: 50%;
   z-index: 5;
   margin-right: 20px;
 }
@@ -30,7 +34,6 @@ body {
 #prev{
   position: absolute;
   left: 0;
-  top: 50%;
   z-index: 5;
   margin-left: 20px;
 }
@@ -65,14 +68,14 @@ body {
   /* top: 120px;
   left: 230px;
   position: absolute; */
-  height: 40vh;
+  height: 30vh;
 
   display: flex;
   flex-flow: column;
   /* justify-content: center; */
 
   padding-left: 150px;
-  padding-top: 50px;
+  padding-top: 30px;
 
   font-size: 1.5;
   font-weight: 100;
@@ -80,6 +83,39 @@ body {
 }
 .subtitle{
   display: flex;
+}
+.subtitle p{
+  font-size: 24px;
+  line-height: 35px;
+  margin: 0;
+}
+.subtitle a{
+  height: 35px;
+  width: 100px;
+  /* min-width: 50px;
+  max-width: 100px; */
+  background-color: white;
+  color: #61606A;
+  border: none;
+  border-radius: 10px;
+  margin-left: 8px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 35px;
+}
+.subtitle a:visited{
+  height: 35px;
+  width: 10%;
+  min-width: 50px;
+  max-width: 100px;
+  background-color: white;
+  color: #61606A;
+  border: none;
+  border-radius: 10px;
+  margin-left: 8px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 35px;
 }
 
 /* ! SLIDESHOW */
@@ -104,11 +140,13 @@ body {
   white-space: nowrap;
   position: absolute;
   z-index: 3;
-  top: 250px;
+  top: 20vh;
 }
 .slideBtn{
   width: 50px;
   height: 50px;
+  position: absolute;
+  top: 50%;
 
   border-radius: 100%;
 
@@ -140,7 +178,8 @@ body {
   /* box-shadow: 2px 4px 4px rgba(55, 63, 65, 0.25); */
   border-radius: 30px;
   width: 100%;
-  max-width: 300px;
+  max-width: 190px;
+  min-width: 100px;
 }
 #dots{
   width: 100%;
@@ -161,19 +200,71 @@ body {
   opacity: 1;
 }
 
+/* ! SLOGAN */
+.slogan-container {
+  height: 40vh;
+  display: flex;
+  width: 100%;
+  /* justify-content: space-around; */
+  align-items: flex-end;
+  /* position: absolute; */
+  /* bottom: 150px; */
+  font-size: 20px;
+}
+.slogan{
+  flex: 1;
+  padding-bottom: 10px;
+}
+.slogan h2{
+  margin: 0;
+}
+.slogan:first-child{
+  text-align: left;
+  padding-left: 20px;
+}
+.slogan:nth-child(2){
+  text-align: center;
+}
+.slogan:nth-child(3){
+  text-align: right;
+  padding-right: 20px;
+}
 /* ! CONTACT */
 .contact-us {
-  display: flex;
+  /* display: flex; */
   height: 50px;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 110px;
 }
-.slogan-container {
-  height: 35vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  /* height: 400px; */
+.contact-us input{
+  height: 40px;
+  width: 30%;
+  border: solid 1px #61606A;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+.contact-us button{
+  height: 44px;
+  width: 10%;
+  min-width: 50px;
+  max-width: 100px;
+  background-color: #61606A;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin-left: 5px;
+}
+.contact-us a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #61606A;
+}
+.contact-us a:visited{
+  color: #61606A;
 }
 
 /* ! FOOTER */
@@ -182,6 +273,81 @@ body {
   bottom: 0;
   width: 100%;
   background-color: #61606a;
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 900px) {
+  .slideshow-img-cont{
+    width: 50%;
+  }
+  .slideBtn{
+    top: unset;
+    bottom: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  h1{
+    margin: 10px 0;
+  }
+
+  .first-section{
+    background-size: contain;
+  }
+  .title-container{
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+  .subtitle{
+    flex-flow: column;
+  }
+  .subtitle a{
+    margin: 5px 0;
+  }
+
+  .slideshow{
+    height: 37vh;
+  }
+  .slideshow-img-cont{
+    width: 100%;
+    margin: 0;
+  }
+
+  .slogan-container{
+    height: 45vh;
+    flex-flow: column;
+    font-size: 16px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .slogan{
+    flex: unset;
+  }
+  .slogan p{
+    margin: 5px;
+  }
+  .slogan:first-child{
+    text-align: center;
+    padding-left: 0;
+  }
+  .slogan:nth-child(2){
+    text-align: center;
+  }
+  .slogan:nth-child(3){
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .contact-us input{
+    width: 50%;
+  }
+  .contact-us button{
+    width: 20%;
+  }
+  .contact-us p{
+    margin: 8px 0;
+    font-size: 12px;
+  }
 }
