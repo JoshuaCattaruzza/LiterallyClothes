@@ -13,74 +13,71 @@
 </head>
 <body>
     <div class="container">
-        <div class="first-section">
-            <!-- <img class="title-img"src="./img/bg-top.jpg" alt=""> -->
-            <div class="title-container">
-                <h1 class="title">L·IT·ER·A·L·LY</h1>
-                <div class="subtitle">
-                    <p>Why is there a broccoli?</p>
-                    <a href="https://instagram.com/literallyclothes.store?utm_medium=copy_link">Find Out</a>
-                </div>
+        <div class="title-container">
+            <h1 class="title">L·IT·ER·A·L·LY</h1>
+            <div class="subtitle">
+                <p>Why is there a broccoli?</p>
+                <a href="https://instagram.com/literallyclothes.store?utm_medium=copy_link">Find Out</a>
             </div>
         </div>
-        <div class="second-section">
-            <!-- ! INDEX MOVE -->
-            <!-- <div class="slideshow">
-                <button onclick="prev()">Prev</button>
-                <div class="slideshow-img-cont">
+        <!-- ! INDEX MOVE -->
+        <!-- <div class="slideshow">
+            <button onclick="prev()">Prev</button>
+            <div class="slideshow-img-cont">
+                <img id="prev-img" class="left-shadow" alt="" src="img/mens-premium-heavyweight-tee-white-left-front.png">
+            </div>
+            <div class="slideshow-img-cont">
+                <img id="selected-img" class="central-shadow" alt="" src="img/Logo.png">
+            </div>
+            <div class="slideshow-img-cont">
+                <img id="next-img" class="right-shadow" alt="" src="img/mens-premium-heavyweight-tee-white-right-front.png">
+            </div>
+            <button onclick="next()">Next</button> 
+        </div> -->
+        <!-- ! OVERFLOW MOVE -->
+        <div class="slideshow">
+            <div onclick="overflowPrev()" class="slideBtn hidden" id="prev"></div>
+            <div id="slideshow-translate">
+                <!-- <div class="slideshow-img-cont">
                     <img id="prev-img" class="left-shadow" alt="" src="img/mens-premium-heavyweight-tee-white-left-front.png">
                 </div>
                 <div class="slideshow-img-cont">
-                    <img id="selected-img" class="central-shadow" alt="" src="img/Logo.png">
+                    <img id="selected-img" class="left-shadow" alt="" src="img/Logo.png">
                 </div>
                 <div class="slideshow-img-cont">
-                    <img id="next-img" class="right-shadow" alt="" src="img/mens-premium-heavyweight-tee-white-right-front.png">
-                </div>
-                <button onclick="next()">Next</button> 
-            </div> -->
-            <!-- ! OVERFLOW MOVE -->
-            <div class="slideshow">
-                <div onclick="overflowPrev()" class="slideBtn hidden" id="prev"></div>
-                <div id="slideshow-translate">
-                    <!-- <div class="slideshow-img-cont">
-                        <img id="prev-img" class="left-shadow" alt="" src="img/mens-premium-heavyweight-tee-white-left-front.png">
-                    </div>
-                    <div class="slideshow-img-cont">
-                        <img id="selected-img" class="left-shadow" alt="" src="img/Logo.png">
-                    </div>
-                    <div class="slideshow-img-cont">
-                        <img id="next-img" class="left-shadow" alt="" src="img/mens-premium-heavyweight-tee-white-right-front.png">
-                    </div> -->
-                </div>
-                <div onclick="overflowNext()" class="slideBtn visible" id="next"></div>
-                <div id="dots">
-                    <!-- <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div> -->
-                </div>
+                    <img id="next-img" class="left-shadow" alt="" src="img/mens-premium-heavyweight-tee-white-right-front.png">
+                </div> -->
             </div>
-            <div class="slogan-container">
-                <div class="slogan">
-                    <p>This is not a firm. <strong>It’s a community</strong> <br>
-                        This is not a brand. <strong>It’s a mood</strong></p>
-                </div>
-                <div class="slogan">
-                    <h2>It’s Literally..</h2>
-                </div>
-                <div class="slogan">
-                    <p>It's Little Italy in your wardrobe <br>
-                        You don’t wear it, <strong>you feel it</strong></p>
-                </div>
+            <div onclick="overflowNext()" class="slideBtn visible" id="next"></div>
+            <div id="dots">
+                <!-- <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div> -->
             </div>
-            <div class="contact-us">
-                <p>Would you like to stay updated?</p>
+        </div>
+        <div class="slogan-container">
+            <div class="slogan">
+                <p>This is not a firm. <strong>It’s a community</strong> <br>
+                    This is not a brand. <strong>It’s a mood</strong></p>
+            </div>
+            <div class="slogan">
+                <h2>It’s Literally..</h2>
+            </div>
+            <div class="slogan">
+                <p>It's Little Italy in your wardrobe <br>
+                    You don’t wear it, <strong>you feel it</strong></p>
+            </div>
+        </div>
+        <div class="contact-us">
+            <p>Would you like to stay updated?</p>
+            <div>
                 <input type="mail" placeholder="Your mail...">
                 <button type="submit">Send</button>
-                <p>Or <a href="https://instagram.com/literallyclothes.store?utm_medium=copy_link">follow us on instagram</a></p>
             </div>
+            <p>Or <a href="https://instagram.com/literallyclothes.store?utm_medium=copy_link">follow us on instagram</a></p>
         </div>
         <div class="footer">
             <p>© LiterallyClothes. All rights reserved.</p>
