@@ -4,7 +4,7 @@ body {
   font-family: "Montserrat", sans-serif;
   height: 100%;
   width: 100%;
-  overflow-y:hidden;
+  /* overflow-y:hidden; */
 }
 /* ----- Tags ----- */
 button:hover{
@@ -25,7 +25,7 @@ button:hover{
   position: absolute;
   right: 0;
   z-index: 5;
-  margin-right: 20px;
+  margin-right: 50px;
 }
 #next::before{
   font-family: 'Material Icons';
@@ -35,7 +35,7 @@ button:hover{
   position: absolute;
   left: 0;
   z-index: 5;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 #prev::before{
   font-family: 'Material Icons';
@@ -177,12 +177,12 @@ button:hover{
   /* box-shadow: 2px 4px 4px rgba(55, 63, 65, 0.25); */
   border-radius: 30px;
   width: 100%;
-  max-width: 190px;
-  min-width: 100px;
+  /* max-width: 190px; */
+  max-width: 300px;
 }
 #dots{
   width: 100%;
-  margin-top: 5px;
+  margin-top: 15px;
   
   display: flex;
   justify-content: center;
@@ -272,20 +272,28 @@ button:hover{
 
 /* ! FOOTER */
 .footer {
-  position: absolute;
-  bottom: 0;
+  /* position: absolute; */
+  /* bottom: 0; */
   width: 100%;
   background-color: #61606a;
   text-align: center;
   line-height: 20px;
   color: white;
   font-size: 12px;
+  margin-top: 40px;
 }
 .footer p{
   margin: 0;
 }
 
 @media screen and (max-width: 900px) {
+  #next{
+    margin-right: 20px;
+  }
+  #prev{
+    margin-left: 20px;
+  }
+
   .title-container{
     background-size: cover;
   }
@@ -369,6 +377,9 @@ button:hover{
     width: 100%;
     margin: 0;
   }
+  /* .slideshow img{
+    max-width: 300px;
+  } */
 
   .slogan-container{
     /* margin-top: 5%; */

@@ -1,10 +1,19 @@
 let carouselImgsSrc = [
-    {src: 'img/mens-premium-heavyweight-tee-white-left-front.png'},
-    {src: 'img/Logo.png'}, /* Sempre in posizione 0 */
-    {src: 'img/mens-premium-heavyweight-tee-white-right-front.png'},
-    {src: 'img/Logo.png'},
-    {src: 'img/mens-premium-heavyweight-tee-white-left-front.png'},
-    {src: 'img/mens-premium-heavyweight-tee-white-right-front.png'}
+    {src: 'img/LC-tshirt-broccolo.jpg'},
+    {src: 'img/LC-tm-Logo.jpg'}, /* Sempre in posizione 0 */
+    {src: 'img/LC-tshirt-maccherone_2.jpg'},
+    {src: 'img/LC-tshirt-biscotto_1.jpg'},
+    {src: 'img/LC-felpa-broccolo.jpg'},
+    {src: 'img/LC-felpa-maccherone.jpg'},
+    {src: 'img/LC-tshirt-maccherone_1.jpg'},
+    {src: 'img/LC-tshirt-biscotto.jpg'},
+    {src: 'img/LC-etichettaInterna.jpg'},
+    {src: 'img/LC-tshirt-biscotto_2.jpg'},
+    {src: 'img/LC-tshirt-biscotto_3.jpg'},
+    {src: 'img/LC-tshirt-maccherone.jpg'},
+    {src: 'img/LC-felpa-biscotto.jpg'},
+    {src: 'img/LC-tshirt-broccolo_1.jpg'},
+    {src: 'img/LC-coming-soon.jpg'}
 ]
 
 carouselImgsSrc.forEach(el => {
@@ -21,7 +30,7 @@ carouselImgsSrc.forEach(el => {
 })
 // Creazione puntini
 if(screen.width > 600){
-    for(let i=0; i < carouselImgsSrc.length - 2; i++){
+    for(let i=0; i < carouselImgsSrc.length - 1; i++){
         let dot = document.createElement('div')
         dot.classList.add('dot')
         document.getElementById('dots').appendChild(dot)
@@ -113,11 +122,11 @@ document.querySelector(`.dot:nth-child(${selectedDotIndex})`).classList.add('dot
 
 const overflowNext = () => {
     if(screen.width > 600){
-        if(nextClicked < carouselImgsSrc.length - 3){
+        if(nextClicked < carouselImgsSrc.length - 2){
             nextClicked++
             slideshowTranslate.style.transform = `translateX(-${imgWidth*nextClicked + imgMargin}px)`
             // verifica dello stato dopo il click
-            if(nextClicked === carouselImgsSrc.length-3){
+            if(nextClicked === carouselImgsSrc.length-2){
                 nextBtn.classList.add('hidden')
                 nextBtn.classList.remove('visible')
             }
