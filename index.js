@@ -55,7 +55,6 @@ let nextImg = document.getElementById('next-img')
 let selectedIndex = 0
 let prevIndex = carouselImgsSrc.length-1
 let nextIndex = selectedIndex + 1
-// console.log(prevIndex, selectedIndex, nextIndex)
 
 // MOVIMENTO NELLO SLIDESHOW TRAMITE INDEX
 const prev = () => {
@@ -79,7 +78,6 @@ const prev = () => {
     selectedImg.src = carouselImgsSrc[selectedIndex].src
     prevImg.src = carouselImgsSrc[prevIndex].src
     nextImg.src = carouselImgsSrc[nextIndex].src
-    // console.log(prevIndex, selectedIndex, nextIndex)
 }
 const next = () => {
     if(selectedIndex >= carouselImgsSrc.length-1){
@@ -104,7 +102,6 @@ const next = () => {
     selectedImg.src = carouselImgsSrc[selectedIndex].src
     prevImg.src = carouselImgsSrc[prevIndex].src
     nextImg.src = carouselImgsSrc[nextIndex].src
-    // console.log(prevIndex, selectedIndex, nextIndex)
 }
 
 // MOVIMENTO NELLO SLIDESHOW TRAMITE CSS
@@ -114,7 +111,6 @@ let prevBtn = document.getElementById('prev')
 // let imgWidth = slideshowTranslate.offsetWidth / carouselImgsSrc.length
 let imgWidth = document.getElementsByClassName('slideshow-img-cont')[0].offsetWidth
 let imgMargin = 2 * document.getElementsByClassName('slideshow-img-cont')[0].offsetLeft
-console.log("file: index.js - line 99 - document.getElementsByClassName('slideshow-img-cont')[0]", document.getElementsByClassName('slideshow-img-cont')[0].offsetLeft)
 let nextClicked = 0
 
 let selectedDotIndex = 1
