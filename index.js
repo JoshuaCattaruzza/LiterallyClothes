@@ -1,10 +1,19 @@
 let carouselImgsSrc = [
-    {src: 'img/mens-premium-heavyweight-tee-white-left-front.png'},
-    {src: 'img/Logo.png'}, /* Sempre in posizione 0 */
-    {src: 'img/mens-premium-heavyweight-tee-white-right-front.png'},
-    {src: 'img/Logo.png'},
-    {src: 'img/mens-premium-heavyweight-tee-white-left-front.png'},
-    {src: 'img/mens-premium-heavyweight-tee-white-right-front.png'}
+    {src: 'img/LC-tshirt-broccolo.jpg'},
+    {src: 'img/LC-tm-Logo.jpg'}, /* Sempre in posizione 0 */
+    {src: 'img/LC-tshirt-maccherone_2.jpg'},
+    {src: 'img/LC-tshirt-biscotto_1.jpg'},
+    {src: 'img/LC-felpa-broccolo.jpg'},
+    {src: 'img/LC-felpa-maccherone.jpg'},
+    {src: 'img/LC-tshirt-maccherone_1.jpg'},
+    {src: 'img/LC-tshirt-biscotto.jpg'},
+    {src: 'img/LC-etichettaInterna.jpg'},
+    {src: 'img/LC-tshirt-biscotto_2.jpg'},
+    {src: 'img/LC-tshirt-biscotto_3.jpg'},
+    {src: 'img/LC-tshirt-maccherone.jpg'},
+    {src: 'img/LC-felpa-biscotto.jpg'},
+    {src: 'img/LC-tshirt-broccolo_1.jpg'},
+    {src: 'img/LC-coming-soon.jpg'}
 ]
 
 carouselImgsSrc.forEach(el => {
@@ -21,7 +30,7 @@ carouselImgsSrc.forEach(el => {
 })
 // Creazione puntini
 if(screen.width > 600){
-    for(let i=0; i < carouselImgsSrc.length - 2; i++){
+    for(let i=0; i < carouselImgsSrc.length - 1; i++){
         let dot = document.createElement('div')
         dot.classList.add('dot')
         document.getElementById('dots').appendChild(dot)
@@ -46,7 +55,6 @@ let nextImg = document.getElementById('next-img')
 let selectedIndex = 0
 let prevIndex = carouselImgsSrc.length-1
 let nextIndex = selectedIndex + 1
-// console.log(prevIndex, selectedIndex, nextIndex)
 
 // MOVIMENTO NELLO SLIDESHOW TRAMITE INDEX
 const prev = () => {
@@ -70,7 +78,6 @@ const prev = () => {
     selectedImg.src = carouselImgsSrc[selectedIndex].src
     prevImg.src = carouselImgsSrc[prevIndex].src
     nextImg.src = carouselImgsSrc[nextIndex].src
-    // console.log(prevIndex, selectedIndex, nextIndex)
 }
 const next = () => {
     if(selectedIndex >= carouselImgsSrc.length-1){
@@ -95,7 +102,6 @@ const next = () => {
     selectedImg.src = carouselImgsSrc[selectedIndex].src
     prevImg.src = carouselImgsSrc[prevIndex].src
     nextImg.src = carouselImgsSrc[nextIndex].src
-    // console.log(prevIndex, selectedIndex, nextIndex)
 }
 
 // MOVIMENTO NELLO SLIDESHOW TRAMITE CSS
@@ -105,7 +111,6 @@ let prevBtn = document.getElementById('prev')
 // let imgWidth = slideshowTranslate.offsetWidth / carouselImgsSrc.length
 let imgWidth = document.getElementsByClassName('slideshow-img-cont')[0].offsetWidth
 let imgMargin = 2 * document.getElementsByClassName('slideshow-img-cont')[0].offsetLeft
-console.log("file: index.js - line 99 - document.getElementsByClassName('slideshow-img-cont')[0]", document.getElementsByClassName('slideshow-img-cont')[0].offsetLeft)
 let nextClicked = 0
 
 let selectedDotIndex = 1
@@ -113,11 +118,11 @@ document.querySelector(`.dot:nth-child(${selectedDotIndex})`).classList.add('dot
 
 const overflowNext = () => {
     if(screen.width > 600){
-        if(nextClicked < carouselImgsSrc.length - 3){
+        if(nextClicked < carouselImgsSrc.length - 2){
             nextClicked++
             slideshowTranslate.style.transform = `translateX(-${imgWidth*nextClicked + imgMargin}px)`
             // verifica dello stato dopo il click
-            if(nextClicked === carouselImgsSrc.length-3){
+            if(nextClicked === carouselImgsSrc.length-2){
                 nextBtn.classList.add('hidden')
                 nextBtn.classList.remove('visible')
             }
